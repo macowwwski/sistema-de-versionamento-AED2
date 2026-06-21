@@ -13,7 +13,7 @@ class Deduplicator {
 public:
     void ingerirArquivos(std::vector<std::string> listaNomesArquivos){
         
-        // 2. chunking
+        // 2. Chunking
         for (std::string nomeArquivo : listaNomesArquivos){
             
             std::ifstream arquivo(nomeArquivo);
@@ -28,7 +28,7 @@ public:
             while (std::getline(arquivo, linha)) {
                 size_t hash = hashing(linha);   // calcula o hash para a linha
 
-        // 3. lógica de ingestão
+        // 3. Lógica de Ingestão
                 uint32_t id = storage.adicionarBlocoSeInedito(hash, linha); // recebe o id associado ao hash
                 listaIds.push_back(id); // acumula id de cada linha
             }
@@ -39,7 +39,6 @@ public:
 };
 
 private: 
-    Storage storage;
-
+    Storage& storage; // se não usasse referência, cada instância de storage seria uma separada
     
 };
