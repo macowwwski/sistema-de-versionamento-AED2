@@ -44,6 +44,19 @@ public:
         }
     };
 
+    // Getters para referências das estruturas - usados no Serializer
+    std::unordered_map<size_t, uint32_t>& getDicionario() {
+    return dicionario_global;
+    }
+
+    std::vector<std::string>& getRepositorio() {
+        return repositorio_global;
+    }
+
+    std::unordered_map<std::string, std::vector<uint32_t>>& getReceitas() {
+        return receitas;
+    }
+
 private: 
     // Declaração das estruturas de memória principais 
     std::unordered_map<size_t, uint32_t> dicionario_global; // <assinatura hash, id do pedaço>
