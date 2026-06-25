@@ -9,6 +9,8 @@
 
 class Reconstructor {
 public:
+    Reconstructor(Storage& storage) : storage(storage) {} // construtor
+
     void reconstruirArquivo(std::string nomeOriginal, std::string nomeSaida){
         // 4. Lógica de Reconstrução
 
