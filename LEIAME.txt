@@ -1,0 +1,28 @@
+Passo a passo para testar o sistema de versionamento de arquivos:
+
+1. Crie arquivos .txt para testar. Eles devem estar na mesma pasta que os arquivos de código para os comandos a seguir.
+    As próximas etapas dependem do seu sistema operacional:
+
+============= AMBIENTE LINUX (Ubuntu 24.04) =============
+2. No terminal da pasta do projeto, insira o comando: make
+    O programa será compilado por meio do arquivo makefile;
+
+3. Para testar:
+    ./dedup ingerir seuDoc1.txt seuDoc2.txt 
+    -> Faz a ingestão dos seus arquivos;
+
+    ./dedup reconstruir seuDoc1.txt saida.txt
+    -> Reconstrói o arquivo solicitado no documento .txt cujo nome você define. Nesse caso, 
+    foi utilizado o nome "saida".
+
+
+=================== AMBIENTE WINDOWS ===================
+2. Para compilar com g++: g++ -std=c++17 -Wall main.cpp -o dedup
+
+3. Para testar:
+    ./dedup ingerir seuDoc1.txt seuDoc2.txt 
+    -> Faz a ingestão dos seus arquivos;
+
+    /dedup reconstruir seuDoc1.txt saida.txt
+    -> Reconstrói o arquivo solicitado no documento .txt cujo nome você define. Nesse caso, 
+    foi utilizado o nome "saida".
